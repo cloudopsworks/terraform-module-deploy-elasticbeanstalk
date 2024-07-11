@@ -4,11 +4,11 @@
 #            Distributed Under Apache v2.0 License
 #
 locals {
-  tags = {
+  tags = merge(var.extra_tags,{
     Environment = format("%s-%s", var.release.name, var.namespace)
     Namespace   = var.namespace
     Release     = var.release.name
-  }
+  })
 }
 ##
 # This module to manage DNS association.
