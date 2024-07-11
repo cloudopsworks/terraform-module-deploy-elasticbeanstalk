@@ -4,7 +4,7 @@
 #            Distributed Under Apache v2.0 License
 #
 locals {
-  tags = merge(var.extra_tags,{
+  tags = merge(var.extra_tags, {
     Environment = format("%s-%s", var.release.name, var.namespace)
     Namespace   = var.namespace
     Release     = var.release.name
