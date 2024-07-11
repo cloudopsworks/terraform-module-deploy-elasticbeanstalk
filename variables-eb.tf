@@ -59,11 +59,6 @@ variable "logs_bucket" {
   type        = string
 }
 
-variable "release_name" {
-  description = "Release name"
-  type        = string
-}
-
 variable "repository_owner" {
   description = "GitHub repository owner"
   type        = string

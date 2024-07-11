@@ -20,7 +20,7 @@ module "dns" {
   version                  = "1.0.5"
   region                   = var.region
   sts_assume_role          = var.sts_assume_role
-  release_name             = var.release_name
+  release_name             = var.release.name
   namespace                = var.namespace
   private_domain           = var.dns.private_zone
   domain_name              = var.dns.domain_name
