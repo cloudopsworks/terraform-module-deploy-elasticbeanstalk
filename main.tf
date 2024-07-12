@@ -15,7 +15,7 @@ locals {
 #   - This can be commented out to disable DNS management (not recommended)
 #
 module "dns" {
-  count                    = var.beanstalk.load_balancer.shared ? 0 : 1
+  count                    = try(var.beanstalk.load_balancer.shared.enabled, false) ? 0 : 1
   source                   = "cloudopsworks/beanstalk-dns/aws"
   version                  = "1.0.5"
   region                   = var.region
