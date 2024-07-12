@@ -32,7 +32,7 @@ module "dns" {
 
 module "version" {
   source          = "cloudopsworks/beanstalk-version/aws"
-  version         = "1.0.11"
+  version         = "1.0.10"
   region          = var.region
   sts_assume_role = var.sts_assume_role
 
