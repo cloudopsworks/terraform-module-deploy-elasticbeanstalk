@@ -50,8 +50,8 @@ module "version" {
   application_versions_bucket = var.versions_bucket
 
   beanstalk_application = var.beanstalk.application
-  config_source_folder  = format("%s/%s", "values", var.release.name)
-  config_hash_file      = format("%s_%s", ".values_hash", var.release.name)
+  config_source_folder  = var.absolute_path == "" ? format("%s/%s", "values", var.release.name) : format("%s/%s/%s", var.absolute_path, "values", var.release.name)
+  config_hash_file      = var.absolute_path == "" ? format("%s_%s", ".values_hash", var.release.name) : format("%s/%s_%s", var.absolute_path, ".values_hash", var.release.name)
 
   github_package = try(var.release.source.githubPackages.name, "") != "" && try(var.release.source.githubPackages.type, "") != ""
   package_name   = try(var.release.source.githubPackages.name, "")

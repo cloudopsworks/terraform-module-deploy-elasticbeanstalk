@@ -63,3 +63,9 @@ variable "repository_owner" {
   description = "GitHub repository owner"
   type        = string
 }
+
+variable "absolute_path" {
+  description = "Absolute path to the configuration files"
+  type        = string
+  default     = ""
+}
